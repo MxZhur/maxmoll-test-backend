@@ -13,6 +13,8 @@ class Warehouse extends Model
         'name',
     ];
 
+    public $timestamps = false;
+
     public function stocks()
     {
         return $this->hasMany(Stock::class);

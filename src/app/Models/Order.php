@@ -17,6 +17,8 @@ class Order extends Model
         'status',
     ];
 
+    const UPDATED_AT = null;
+
     public function warehouse()
     {
         return $this->belongsTo(Warehouse::class);

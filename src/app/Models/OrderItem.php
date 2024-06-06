@@ -15,6 +15,8 @@ class OrderItem extends Model
         'count',
     ];
 
+    public $timestamps = false;
+
     public function order()
     {
         return $this->belongsTo(Order::class);

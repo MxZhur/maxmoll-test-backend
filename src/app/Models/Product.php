@@ -14,6 +14,8 @@ class Product extends Model
         'price',
     ];
 
+    public $timestamps = false;
+
     public function stocks()
     {
         return $this->hasMany(Stock::class);
