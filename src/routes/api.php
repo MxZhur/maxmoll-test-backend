@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StockHistoryController;
 use App\Http\Controllers\WarehouseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,3 +25,5 @@ Route::prefix('/orders')->group(function () {
     Route::put('/{id}/cancel', [OrderController::class, 'cancel']);
     Route::put('/{id}/restore', [OrderController::class, 'restore']);
 });
+
+Route::get('/stock-history', [StockHistoryController::class, 'index']);
