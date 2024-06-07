@@ -87,7 +87,7 @@ class OrderController extends Controller
 
             DB::commit();
 
-            return new OrderResource($order);
+            return (new OrderResource($order))->resolve();
         } catch (\Throwable $e) {
             DB::rollBack();
             throw $e;
@@ -130,7 +130,7 @@ class OrderController extends Controller
 
             $order->refresh();
 
-            return new OrderResource($order);
+            return (new OrderResource($order))->resolve();
         } catch (\Throwable $e) {
             DB::rollBack();
             throw $e;
@@ -176,7 +176,7 @@ class OrderController extends Controller
 
             $order->refresh();
 
-            return new OrderResource($order);
+            return (new OrderResource($order))->resolve();
         } catch (\Throwable $e) {
             DB::rollBack();
             throw $e;
@@ -214,7 +214,7 @@ class OrderController extends Controller
 
         $order->refresh();
 
-        return new OrderResource($order);
+        return (new OrderResource($order))->resolve();
     }
 
 
@@ -255,7 +255,7 @@ class OrderController extends Controller
 
             $order->refresh();
 
-            return new OrderResource($order);
+            return (new OrderResource($order))->resolve();
         } catch (\Throwable $e) {
             DB::rollBack();
             throw $e;
